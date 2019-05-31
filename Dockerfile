@@ -85,10 +85,10 @@ LABEL org.opencontainers.image.url="https://hub.docker.com/r/rexypoo/jupyter" \
       --restart unless-stopped \
       --volume "$HOME"/notebooks:/jupyter/notebooks \
       --volume "$HOME"/.jupyter:/jupyter/config \
-      rexypoo/jupyter' && \
+      rexypoo/jupyter && \
       docker exec -it \
       --user jupyter \
       jupyter \
-      jupyter notebook list \
+      jupyter notebook list' \
       org.label-schema.docker.cmd.devel="docker run -it --entrypoint bash rexypoo/jupyter" \
       org.label-schema.docker.cmd.debug="docker exec -it jupyter bash"
